@@ -2,7 +2,7 @@
 Baby steps towards mastering cypress.io
 
 
-#How to Start
+# How to Start
 1. Clone the project
 2. npm i - Install all the dependencies
 3. There are a lot dependencies that are not updated frequently in parallel with cypress. So while installing if you are seeing conflicts usenpm i --force.
