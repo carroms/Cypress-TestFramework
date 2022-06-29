@@ -1,0 +1,27 @@
+{
+  "name": "cypresstestframework",
+  "version": "1.0.0",
+  "description": "Baby steps towards mastering cypress.io",
+  "main": "index.js",
+  "scripts": {
+    "cypress: open": "./node_modules/.bin/cypress open",
+    "cypress: run": "./node_modules/.bin/cypress run --spec ** / *. spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carroms/CypressTestFramework.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carroms/CypressTestFramework/issues"
+  },
+  "homepage": "https://github.com/carroms/CypressTestFramework#readme",
+  "devDependencies": {
+    "cypress": "^10.3.0"
+  },
+  "dependencies": {
+    "mochawesome": "^7.1.3"
+  }
+}
