@@ -5,23 +5,36 @@
   "main": "index.js",
   "scripts": {
     "cypress: open": "./node_modules/.bin/cypress open",
-    "cypress: run": "./node_modules/.bin/cypress run --spec ** / *. spec.js"
+    "cypress: run": "./node_modules/.bin/cypress run --spec ** / *. spec.js",
+    "test": "cypress open",
+    "delete:reportFolder": "rm -rf mochawesome-report/",
+    "test:cli": "npm run delete:reportFolder && cypress run",
+    "merge:reports": "mochawesome-merge mochawesome-report/*.json > cypress-combined-report.json",
+    "create:html:report": "npm run merge:reports && marge --reportDir TestReport cypress-combined-report.json"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/carroms/CypressTestFramework.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jay",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/carroms/CypressTestFramework/issues"
   },
   "homepage": "https://github.com/carroms/CypressTestFramework#readme",
   "devDependencies": {
-    "cypress": "^10.3.0"
+    "@badeball/cypress-cucumber-preprocessor": "github:badeball/cypress-cucumber-preprocessor",
+    "@bahmutov/cypress-esbuild-preprocessor": "github:bahmutov/cypress-esbuild-preprocessor",
+    "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
+    "cypress": "^10.3.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "mocha": "^10.0.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.2.0"
   },
-  "dependencies": {
-    "mochawesome": "^7.1.3"
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/e2e/cucumber-test/**/*.{js,ts}"
   }
 }

@@ -26,7 +26,7 @@ module.exports = defineConfig({
       return require('./cypress/plugins/index.js')(on, config)
     },
     specPattern:
-      ["**/*.feature", "cypress/e2e/**/*.{js,jsx,ts,tsx}"],
+      ["**/*.feature", "cypress/e2e/**/*.cy.{js,jsx,ts,tsx}"],
     baseUrl: 'https://opensource-demo.orangehrmlive.com/',
   },
 })
