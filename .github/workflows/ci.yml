@@ -21,8 +21,5 @@ jobs:
         with:
           useLockFile: false
 
-      - name: Build
-        run: npm run build
-
       - name: Cypress run
         uses: cypress-io/github-action@v2
