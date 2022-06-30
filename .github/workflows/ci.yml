@@ -10,11 +10,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install node
-        uses: actions/setup-node@v2
-      - uses: bahmutov/npm-install@v1
-       
+      - name: Setup node
+        uses: actions/setup-node@v3
 
+      - name: Download dependencies
+        uses: bahmutov/npm-install@v1
+        with:
+          useLockFile: false
+
+      - name: Build
+        run: npm run build
 
       - name: Cypress run
         uses: cypress-io/github-action@v2
