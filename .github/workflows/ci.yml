@@ -1,7 +1,8 @@
 name: Cypress tests running on a pipeline
-on: [push]
-  branches: 
-      - 'master'
+on: 
+  push:
+    branches: 
+          - 'master'
 jobs: 
   cypress-run:
     runs-on: ubuntu-latest
